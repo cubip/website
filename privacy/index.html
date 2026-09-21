@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- DRAFT pending legal review. Not yet reviewed by a lawyer. -->
+<!-- Pending legal review. Not yet read by a lawyer. -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Privacy policy — cubip</title>
-  <meta name="description" content="What cubip collects, why, where it is kept, and what you can do about it.">
+  <meta name="description" content="What cubip collects, why, where it is kept, how long, and what you can do about it.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,64 +17,76 @@
     <header>
       <p class="wordmark"><a href="/">cubip</a></p>
       <h1>Privacy policy</h1>
-      <p class="meta">Last updated: 20 September 2026</p>
+      <p class="meta">Last updated: 21 September 2026</p>
     </header>
 
-    <p>This policy explains what cubip collects, why, where it is kept, and what you can do about it. cubip is operated by an individual developer in Taiwan. You can reach us at <a href="mailto:support@cubip.com">support@cubip.com</a>.</p>
-    <p>The short version: we collect what the app needs to work and nothing else. There is no advertising, no tracking, no analytics SDK, and we never sell your data.</p>
+    <p>This policy explains what cubip collects, why, where it is kept, for how long, and what you can do about it. It is written to meet the General Data Protection Regulation and the UK GDPR for people in the European Economic Area and the United Kingdom, the state privacy laws of the United States, and Taiwan's Personal Data Protection Act, which applies to cubip as its operator's home law. It applies to everyone who uses cubip, wherever they live.</p>
+    <p><strong>Who is responsible.</strong> Ichieh Hsu, trading as cubip and operating from Taiwan, is the controller of your data. You can reach us at <a href="mailto:support@cubip.com">support@cubip.com</a>.</p>
+    <p>The short version: we collect what the app needs to work and nothing else. There is no advertising, no tracking, no analytics SDK, no profiling, and we never sell or rent your data.</p>
 
-    <h2>What we collect</h2>
-    <p><strong>To sign you in.</strong> Your email address, or the relay address Apple gives us if you use Sign in with Apple and choose to hide your email. There are no passwords and we never ask for a phone number.</p>
-    <p><strong>Your profile.</strong> Your display name, your home city (the city only, not an address), your birth year, your travel style, and the countries you have visited and wish to visit. Your gender is optional; it is used only to apply the gender restriction an organiser can put on a trip post, so that people who do not match never see the post.</p>
-    <p><strong>What you share.</strong> Your travel records (place, dates, a few lines of text and an optional journal), the photographs you choose to add to them, your trip posts, your applications to other people's trips, and your messages.</p>
-    <p><strong>Safety.</strong> Reports you make and blocks you set, and reports others make about you.</p>
-    <p><strong>Identity verification, if you choose it.</strong> A photo of an ID document. It is stored in a private bucket, viewed only by the operator to confirm that the document matches your profile, and deleted after review. After that we keep only the fact that you are verified and the date.</p>
-    <p>We do not collect your location from the device, your contacts, or anything from other apps.</p>
+    <h2 id="what">What we collect and why</h2>
+    <p><strong>To sign you in.</strong> Your email address, or the relay address Apple gives us if you use Sign in with Apple and choose to hide your email; if you sign in with Apple, the name Apple offers once, which prefills your display name. There are no passwords and we never ask for a phone number. <em>Purpose:</em> to run your account. <em>Basis:</em> the contract between us (these terms). If you do not give an email address or an Apple ID, you cannot have an account.</p>
+    <p><strong>Your profile.</strong> Your display name, your home city (the city only, not an address), your birth year, your travel style, and the countries you have visited and wish to visit. <em>Purpose:</em> to show who you are to the people you have chosen to show it to, and to rank the home wall for you. <em>Basis:</em> the contract. Your gender is optional. It is used only to apply the gender restriction an organiser may put on a trip post, so that people who do not match never see the post. <em>Basis:</em> your consent, which you may withdraw by clearing the field. If you do not give it, you will not be shown posts that carry a restriction.</p>
+    <p><strong>What you share.</strong> Your travel records (place, dates, a few lines of text and an optional journal), the photographs you choose to add to them, your trip posts, your applications to other people's trips, your invitations, and your messages. <em>Purpose:</em> to publish them to the people you have chosen, to run applications and conversations, and to act on reports. <em>Basis:</em> the contract, and our legitimate interest in keeping the service safe.</p>
+    <p><strong>Safety.</strong> Reports you make and blocks you set, reports others make about you, and the decisions we take on them. <em>Purpose:</em> to keep people safe and to enforce the <a href="/terms/">terms of use</a>. <em>Basis:</em> our legitimate interest in a safe service, and our legal obligations.</p>
+    <p><strong>Identity verification, if you choose it.</strong> A photograph of an identity document. It goes into a private store that no part of the app can read, is looked at once by a person at cubip to confirm that it matches your profile, and is deleted after that review. After that we keep only the fact that you were verified and the date. <em>Purpose:</em> to let you post trips and to show a verified mark. <em>Basis:</em> your consent. If you do not verify, you can use everything except posting a trip.</p>
+    <p><strong>Technical data.</strong> Our hosting provider records the time and network address of requests to keep the service running and to detect abuse; we do not use this data for anything else. The app itself sends no analytics, crash reports or device identifiers to us or to anyone.</p>
+    <p>We do not collect your location from the device, your contacts, your photo library beyond the photographs you pick, or anything from other apps. The city on a record is typed by you; its map coordinates are looked up from the name when the record is saved.</p>
 
-    <h2>Photographs</h2>
-    <p>Before a photograph leaves your phone, the app removes its GPS position and device metadata. There is no setting for this; it always happens. Photographs are stored in a private bucket and served through short-lived signed links, so they cannot be reached by a public address. For each record you choose who can see it: everyone, verified people, or people you have travelled with.</p>
+    <h2 id="photos">Photographs</h2>
+    <p>Before a photograph leaves your phone, the app removes its GPS position and device metadata. There is no setting for this; it always happens. Photographs are stored privately and served through links that expire within an hour, so they cannot be reached by a public address. For each record you choose who can see it: everyone on cubip, verified people, or people you have travelled with.</p>
 
-    <h2>Why we use it</h2>
+    <h2 id="who-sees">Who sees your data</h2>
+    <p><strong>Other users</strong> see what you have chosen to show them: your profile, your records at the visibility you set, your trip posts, your applications to the organiser you sent them to, and your messages in conversations you are part of. A trip post with a gender restriction is shown only to people who match it. Messaging opens only after an application or an invitation is accepted.</p>
+    <p><strong>cubip</strong> sees what is needed to run the service and to act on reports, including reported messages and identity documents under review.</p>
+    <p><strong>Providers</strong> process data on our instructions, under contracts that bind them to protect it, and for no purpose of their own:</p>
     <ul>
-      <li>to run the app: sign you in, show your profile and records to the people you have chosen, match trip posts to people who may see them, and deliver messages,</li>
-      <li>to keep people safe: act on reports, honour blocks, and enforce the rules in the <a href="/terms/">terms of use</a>,</li>
-      <li>to answer you when you write to us.</li>
+      <li><strong>Supabase</strong> hosts the database, file storage and sign-in. The servers are in Frankfurt, Germany, in the European Union.</li>
+      <li><strong>Apple</strong> provides Sign in with Apple and the App Store, and receives what you give Apple when you use them, under Apple's own privacy policy.</li>
+      <li><strong>Resend</strong> delivers the email that carries your sign-in code. It sees your email address and that email only.</li>
     </ul>
-    <p>We do not use your data to build advertising profiles, and we do not share it with advertisers or data brokers.</p>
+    <p>We do not give your data to anyone else, except where the law requires it, to respond to a court order or a lawful request from an authority, to establish or defend a legal claim, or where we believe in good faith that it is needed to protect someone from serious harm. If the service is ever transferred to a successor, your data goes with it under this policy, and we will tell you.</p>
 
-    <h2>Who sees it</h2>
-    <p>Other users see what you have chosen to show them: your profile, your records at the visibility you set, your trip posts, and your messages in conversations you are part of. Messaging opens only after an application to a trip is accepted or an invitation is accepted.</p>
-    <p>The operator sees what is needed to run the service and to act on reports, including reported messages.</p>
-    <p>We use two providers to run the app:</p>
+    <h2 id="where">Where it is kept and international transfers</h2>
+    <p>Your data is stored in the European Union, in Frankfurt, Germany, and is reached from Taiwan, where cubip operates, and from wherever you use the app. Apple and Resend process data in the United States and elsewhere. If you live in the EEA or the UK, your data stays in the EU except when cubip itself reaches it from Taiwan, which is necessary to run the contract with you (GDPR Article 49(1)(b)) and is protected by the same access rules as everywhere else; transfers by our providers rest on the European Commission's standard contractual clauses in their data processing terms. If you live in the United States, your data is stored in the EU rather than in the United States.</p>
+
+    <h2 id="how-long">How long we keep it</h2>
     <ul>
-      <li><strong>Supabase</strong> for the database and file storage. The servers are in Frankfurt, Germany, in the European Union.</li>
-      <li><strong>Apple</strong> for Sign in with Apple.</li>
+      <li><strong>Your account, profile and content:</strong> while your account exists. When you delete your account, they are removed at once, and copies in our provider's backups expire within 30 days.</li>
+      <li><strong>Identity documents:</strong> deleted when the review is done, usually within a few days, whether or not the account is later deleted. The verified mark and its date stay for the life of the account.</li>
+      <li><strong>Messages:</strong> while the conversation exists. When you delete your account, the messages you sent are removed from every conversation.</li>
+      <li><strong>Reports, blocks and moderation decisions:</strong> while the accounts involved exist, and longer if a claim or an investigation is open. A report you made stays after you delete your account, without your name attached, so that it can still be acted on.</li>
+      <li><strong>Request logs at our hosting provider:</strong> up to 30 days.</li>
+      <li><strong>Email you send us:</strong> as long as needed to answer it and to show what was agreed, then deleted.</li>
     </ul>
-    <p>Both process data on our instructions to provide the service. We do not give your data to anyone else, unless the law requires it or it is needed to protect someone from harm.</p>
+    <p>We keep data longer only where the law requires it or where it is needed to establish, exercise or defend a legal claim.</p>
 
-    <h2>Where it is kept</h2>
-    <p>Your data is stored in the European Union, in Frankfurt, Germany. You use the app from wherever you are, so your data travels between your device and those servers.</p>
-
-    <h2>How long we keep it</h2>
-    <p>We keep your data while your account exists. When you delete your account, your account and the content you have created are removed. Some records may be kept for a limited time where the law requires it, or to handle a report involving your account that is still open. ID documents sent for verification are deleted after review, whether or not the account is deleted.</p>
-
-    <h2>Your choices and rights</h2>
+    <h2 id="rights">Your rights</h2>
+    <p>You can, at any time:</p>
     <ul>
-      <li><strong>Delete your account</strong> from Settings in the app. This removes your account and your content.</li>
-      <li><strong>Get a copy of your data</strong> by writing to <a href="mailto:support@cubip.com">support@cubip.com</a>.</li>
-      <li><strong>Correct something</strong> either in the app or by writing to us.</li>
-      <li><strong>Choose what to show</strong>: gender and verification are optional, and every record has its own visibility.</li>
+      <li><strong>see and correct</strong> your data in the app, or ask us for a copy of everything we hold about you;</li>
+      <li><strong>delete your account</strong> from Settings in the app, which removes your account and your content;</li>
+      <li><strong>withdraw consent</strong> to the optional things: clear your gender, or ask us not to keep the verified mark;</li>
+      <li><strong>choose what to show</strong>: every record has its own visibility, and your profile shows only what you put on it;</li>
+      <li><strong>object</strong> to processing that rests on our legitimate interests, and ask us to stop, restrict, or move your data to you in a portable form;</li>
+      <li><strong>complain</strong> to a supervisory authority: in the EEA, the data protection authority of the country you live in; in the UK, the Information Commissioner's Office; in the United States, your state's attorney general; in Taiwan, the Personal Data Protection Commission.</li>
     </ul>
-    <p>If you are in the European Union or another place with a data protection law that gives you further rights, such as the right to object or to complain to a supervisory authority, those rights apply as the law provides.</p>
+    <p>Write to <a href="mailto:support@cubip.com">support@cubip.com</a> from the email address on your account. We answer within 30 days (45 days where United States state law allows, and we will say so if we need them), and we may ask you to confirm that the account is yours. There is no charge, and we never treat you differently for exercising a right. If we refuse a request, we tell you why, and you may appeal by replying to that email; a person reviews the appeal and answers within 45 days.</p>
 
-    <h2>Children</h2>
-    <p>cubip is for people 18 and older. We do not knowingly collect data from anyone younger, and we remove accounts we find belong to someone under 18.</p>
+    <h2 id="us">If you live in the United States</h2>
+    <p>We do not sell your personal information, do not share it for cross-context behavioural advertising, do not use it for targeted advertising, and do not use it for profiling that produces legal or similarly significant effects. There is therefore nothing to opt out of, and we do not respond to browser opt-out signals because there is no sale or sharing to stop. The only sensitive personal information we process is the identity document you may choose to send for verification, and gender if you choose to give it; both are used only as this policy says, and never for inferring anything about you. The categories we collect, the purposes, and the recipients are listed above, and we have collected only those in the twelve months before the date at the top of this policy. You may exercise the rights listed above yourself or through an authorised agent who can show they act for you.</p>
 
-    <h2>Changes to this policy</h2>
+    <h2 id="security">Security</h2>
+    <p>Everything travels over encrypted connections. Sign-in tokens live in the device's keychain. Data is protected in the database by row-level rules that decide, for every row, who may read or write it; the app cannot get around them. Photographs and documents are in private storage. If a breach ever affects your data, we will tell you and the authorities as the law requires.</p>
+
+    <h2 id="children">Children</h2>
+    <p>cubip is for people 18 and older. We do not knowingly collect data from anyone younger. If we learn that an account belongs to someone under 18, we close it and delete its data. If you believe a child has an account, write to <a href="mailto:support@cubip.com">support@cubip.com</a>.</p>
+
+    <h2 id="changes">Changes to this policy</h2>
     <p>We may update this policy as the app changes. When the change matters, we will tell you in the app before it takes effect. The date at the top is the date of the current version.</p>
 
-    <h2>Contact</h2>
-    <p><a href="mailto:support@cubip.com">support@cubip.com</a></p>
+    <h2 id="contact">Contact</h2>
+    <p>Ichieh Hsu, trading as cubip, Taiwan · <a href="mailto:support@cubip.com">support@cubip.com</a></p>
 
     <hr>
     <footer>

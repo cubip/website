@@ -146,17 +146,16 @@ footer {
   text-decoration: underline;
 }
 
-/* Landing page: one screen, wordmark at the top, the lines that matter,
-   links pinned at the bottom of the viewport. */
+/* Landing page: one screen. The words on the left, three screenshots as
+   prints on the right, the legal links in the footer. Nothing else. */
 .landing {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  min-height: 100dvh;
-  max-width: 42rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+  max-width: 68rem;
   margin: 0 auto;
-  padding: 2.5rem 0 2rem;
+  padding: 2.5rem 16px 2rem;
 }
 
 .landing .wordmark {
@@ -164,16 +163,68 @@ footer {
 }
 
 .landing .lede {
-  font-size: 1.6rem;
-  line-height: 1.3;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   margin: 2rem 0 1rem;
-  max-width: 28rem;
+  max-width: 22ch;
 }
 
 .landing .note {
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  max-width: 34rem;
+  margin: 0 0 1.75rem;
+}
+
+/* The one control on the page. Once the App Store link exists it is an
+   <a class="store"> here; until then the pill says so. */
+.store-line {
+  font-family: var(--sans);
+  font-size: 14px;
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.store {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  background: var(--accent);
+  color: #FFFFFF;
+  border-radius: 999px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.store:hover {
+  text-decoration: none;
+  opacity: 0.92;
+}
+
+.landing-phones {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.landing-phones .phone {
+  max-width: 200px;
+}
+
+.landing-phones .phone:nth-child(2) {
+  margin-top: 2.5rem;
+}
+
+.landing-phones .phone:nth-child(3) {
+  display: none;
 }
 
 @media (max-width: 480px) {
@@ -186,7 +237,11 @@ footer {
   }
 
   .landing .lede {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+  }
+
+  .landing-phones .phone {
+    max-width: 150px;
   }
 }
 
@@ -442,6 +497,22 @@ footer {
 }
 
 @media (min-width: 720px) {
+  .landing {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    min-height: calc(100vh - 8rem);
+    min-height: calc(100dvh - 8rem);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .landing .lede {
+    font-size: 2.4rem;
+  }
+
+  .landing-phones .phone:nth-child(3) {
+    display: block;
+  }
+
   .hero {
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
     padding-top: 4.5rem;
