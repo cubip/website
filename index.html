@@ -3,31 +3,138 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
   <title>cubip</title>
   <meta name="description" content="An iOS app for sharing the trips you have taken and finding someone to take the next one with.">
+  <meta property="og:title" content="cubip">
+  <meta property="og:description" content="Share the trips you have taken. Find someone to take the next one with.">
+  <meta property="og:image" content="https://cubip.com/images/1-home.webp">
+  <link rel="icon" href="/images/icon.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-  <main class="landing">
-    <header>
-      <p class="wordmark">cubip</p>
-    </header>
+<body class="home">
 
-    <section>
-      <p class="lede">An iOS app for sharing the trips you have taken and finding someone to take the next one with.</p>
-      <p class="note">Coming to the App Store.</p>
-    </section>
+  <nav class="topbar">
+    <p class="wordmark"><a href="/">cubip</a></p>
+    <ul class="links">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#safety">Safety</a></li>
+      <li><a href="#questions">Questions</a></li>
+      <li><a href="/support/">Support</a></li>
+    </ul>
+  </nav>
 
-    <footer>
-      <ul class="links">
-        <li><a href="/terms/">Terms</a></li>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/support/">Support</a></li>
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Share the trips you have taken. Find someone to take the next one with.</h1>
+      <p class="lede">You post photographs and a few honest lines from where you have been. People looking for a companion read that before they decide to spend ten days with you.</p>
+      <p class="soon"><span class="pill">Coming to the App Store</span> <span class="muted">iPhone, free.</span></p>
+    </div>
+    <figure class="phone phone-hero">
+      <img src="/images/1-home.webp" alt="The cubip home screen: a wall of photographs from trips people have taken" width="500" height="1087" loading="eager">
+    </figure>
+  </header>
+
+  <section class="pillars">
+    <div class="pillar">
+      <figure class="phone">
+        <img src="/images/2-record.webp" alt="A travel record: a photograph, the place, the dates and a few lines" width="500" height="1087" loading="lazy">
+      </figure>
+      <h2>Sharing is the way in</h2>
+      <p>A trip is a few photographs, where and when, and two or three sentences that are true. Not a review, not a travelogue. That is your travel résumé, and it says more about how you travel than any profile field could.</p>
+    </div>
+    <div class="pillar">
+      <figure class="phone">
+        <img src="/images/3-companions.webp" alt="A companion card: the route, the dates, the party and the organiser" width="500" height="1087" loading="lazy">
+      </figure>
+      <h2>Finding company is the way out</h2>
+      <p>When you want someone along, post the trip: the route, the dates, how many people it is for. Posts sort by departure date, nothing else. No score decides who you see.</p>
+    </div>
+  </section>
+
+  <section id="how" class="how">
+    <h2 class="section-title">How it works</h2>
+    <ol class="steps">
+      <li>
+        <span class="step-number">1</span>
+        <h3>Share a trip you have taken</h3>
+        <p>Pick the photographs, name the place, write a few lines. Location and device details are removed from every photograph before it leaves your phone.</p>
+      </li>
+      <li>
+        <span class="step-number">2</span>
+        <h3>Post the next one</h3>
+        <p>A route of stops, the dates with a little flexibility, and how many people the trip is for. You decide who may apply.</p>
+      </li>
+      <li>
+        <span class="step-number">3</span>
+        <h3>Apply by writing</h3>
+        <p>There is no swipe to join. Applying means writing to the organiser, at least a few sentences. Saving a post keeps it on a private list and tells nobody.</p>
+      </li>
+      <li>
+        <span class="step-number">4</span>
+        <h3>One conversation per trip</h3>
+        <p>Nobody can message you until you have said yes. Once you have, the trip has one conversation, and everyone in the party is in it.</p>
+      </li>
+    </ol>
+    <div class="how-phones">
+      <figure class="phone">
+        <img src="/images/4-post.webp" alt="A trip post: the route through Georgia and Armenia, the dates and the party" width="500" height="1087" loading="lazy">
+      </figure>
+      <figure class="phone">
+        <img src="/images/5-chat.webp" alt="A trip's conversation, opened after an application was accepted" width="500" height="1087" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section id="safety" class="safety">
+    <div class="safety-text">
+      <h2 class="section-title">Safe enough to actually use</h2>
+      <p class="lede">Meeting a stranger for ten days is a bigger decision than a dinner. The rules are built for that, and they are not optional.</p>
+      <ul class="rules">
+        <li><strong>Identity checked by a person.</strong> Posting a trip requires it. The document is deleted after the check; only the mark stays.</li>
+        <li><strong>Women only, if you say so.</strong> A post can be women only, men only or same gender only, and people who do not match never see it.</li>
+        <li><strong>No messaging before acceptance.</strong> There is no way to write to someone who has not accepted you. None.</li>
+        <li><strong>Report and block from anywhere.</strong> Reports are acted on within 24 hours. Some categories hide the content at once.</li>
+        <li><strong>Your photographs stay yours.</strong> Metadata is stripped on the phone. You choose who sees each trip: everyone, verified people, or people you have travelled with.</li>
+        <li><strong>Nothing is tracked.</strong> No advertising, no analytics, nothing sold. Sign in with Apple or an email code; there is no password and no phone number.</li>
       </ul>
-    </footer>
-  </main>
+    </div>
+    <figure class="phone">
+      <img src="/images/6-profile.webp" alt="A profile: the footprint map, the flags of countries visited, and the trips" width="500" height="1087" loading="lazy">
+    </figure>
+  </section>
+
+  <section id="questions" class="questions">
+    <h2 class="section-title">Questions</h2>
+    <dl>
+      <dt>Is this a dating app?</dt>
+      <dd>No. Nothing in it works like one. Saving a post tells nobody, applying means writing, and a trip is a party of people rather than a pair. People do meet, but that is what travel does.</dd>
+      <dt>What does it cost?</dt>
+      <dd>Nothing. There are no paid features and no advertising.</dd>
+      <dt>Where does it work?</dt>
+      <dd>Anywhere. The app is in English and Traditional Chinese, and a trip can be in any country, or several. It starts with people in Taiwan, because that is where it was made.</dd>
+      <dt>Why does posting a trip require identity verification?</dt>
+      <dd>Because someone is about to decide whether to travel with you. The check is done by a person, the document is deleted afterwards, and only the fact that you were verified is kept.</dd>
+      <dt>Do I have to share my own trips?</dt>
+      <dd>Not to look around, or to apply. But a blank profile almost never gets accepted, and the point of the photographs is that they tell people who you are before any message does.</dd>
+      <dt>When?</dt>
+      <dd>Soon. The app is finished and being tested. Write to <a href="mailto:hello@cubip.com">hello@cubip.com</a> if you want to hear when it is out.</dd>
+    </dl>
+  </section>
+
+  <footer class="site-footer">
+    <p class="wordmark">cubip</p>
+    <ul class="links">
+      <li><a href="/terms/">Terms of use</a></li>
+      <li><a href="/privacy/">Privacy policy</a></li>
+      <li><a href="/support/">Support</a></li>
+      <li><a href="mailto:support@cubip.com">support@cubip.com</a></li>
+    </ul>
+    <p class="meta">Made in Taiwan · 2026</p>
+  </footer>
+
 </body>
 </html>
