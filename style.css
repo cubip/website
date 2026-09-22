@@ -1,15 +1,19 @@
+@font-face { font-family: "Plus Jakarta Sans"; src: url("/fonts/PlusJakartaSans-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Plus Jakarta Sans"; src: url("/fonts/PlusJakartaSans-SemiBold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Plus Jakarta Sans"; src: url("/fonts/PlusJakartaSans-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+
 /* cubip — the website's one stylesheet.
    The same rules as the app: white paper, ink for text, one accent for links,
-   serif for everything people read. */
+   bundled Plus Jakarta Sans for readable, consistent type. */
 
 :root {
-  --ink: #16211C;
-  --muted: #67736D;
-  --faint: #9AA39E;
-  --raised: #F4F5F3;
-  --accent: #7E3454;
-  --rule: rgba(22, 33, 28, 0.11);
-  --serif: "Newsreader", "Noto Serif TC", "Songti TC", Georgia, serif;
+  --ink: #282531;
+  --muted: #6B6674;
+  --faint: #746D7D;
+  --raised: #F5F3F8;
+  --accent: #5B43B5;
+  --rule: #E0DBE8;
+  --reading: "Plus Jakarta Sans", "PingFang TC", system-ui, sans-serif;
   --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -18,9 +22,9 @@
 }
 
 html {
-  background: #FFFFFF;
+  background: #FFFEFB;
   color: var(--ink);
-  font-family: var(--serif);
+  font-family: var(--reading);
   font-size: 18px;
   line-height: 1.6;
   -webkit-text-size-adjust: 100%;
@@ -40,10 +44,10 @@ main {
   padding: 3rem 0 4rem;
 }
 
-/* The wordmark is the app's name: lowercase, serif, never anything else. */
+/* The wordmark is the app's name: lowercase, Plus Jakarta Sans Bold, never anything else. */
 .wordmark {
-  font-family: var(--serif);
-  font-weight: 400;
+  font-family: var(--reading);
+  font-weight: 700;
   font-size: 2rem;
   letter-spacing: -0.01em;
   line-height: 1;
@@ -56,8 +60,8 @@ main {
 }
 
 h1 {
-  font-family: var(--serif);
-  font-weight: 400;
+  font-family: var(--reading);
+  font-weight: 700;
   font-size: 2rem;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -65,8 +69,8 @@ h1 {
 }
 
 h2 {
-  font-family: var(--serif);
-  font-weight: 500;
+  font-family: var(--reading);
+  font-weight: 600;
   font-size: 1.35rem;
   line-height: 1.3;
   margin: 2.5rem 0 0.5rem;
@@ -100,12 +104,12 @@ strong {
 }
 
 /* Metadata — the page's date, the footer line — is set the way MetaText is
-   in the app: small sans, tracked, in capitals. */
+   in the app: small, readable, in sentence case. */
 .meta {
   font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: normal;
+  text-transform: none;
   color: var(--muted);
   margin: 0 0 2rem;
 }
@@ -163,8 +167,8 @@ footer {
 }
 
 .landing .lede {
-  font-family: var(--serif);
-  font-weight: 400;
+  font-family: var(--reading);
+  font-weight: 600;
   font-size: 1.9rem;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -190,22 +194,6 @@ footer {
   align-items: center;
   gap: 0.75rem;
   flex-wrap: wrap;
-}
-
-.store {
-  display: inline-block;
-  padding: 0.6rem 1.1rem;
-  background: var(--accent);
-  color: #FFFFFF;
-  border-radius: 999px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  text-decoration: none;
-}
-
-.store:hover {
-  text-decoration: none;
-  opacity: 0.92;
 }
 
 .landing-phones {
@@ -251,311 +239,20 @@ footer {
   }
 }
 
-/* ------------------------------------------------------------ Landing page
-   Photographs carry the colour; the page stays white and set in the serif.
-   Phones are plain rounded frames, no bezel art, so the screenshots read as
-   prints on a wall rather than as a device advert. */
-
-.home {
-  padding: 0;
-}
-
-.topbar {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  max-width: 68rem;
-  margin: 0 auto;
-  padding: 1.75rem 16px 0;
-}
-
-.topbar .wordmark {
-  font-size: 1.75rem;
-}
-
-.topbar .links a {
-  color: var(--ink);
-}
-
-.hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 2.5rem;
-  align-items: center;
-  max-width: 68rem;
-  margin: 0 auto;
-  padding: 3rem 16px 4rem;
-}
-
-.hero h1 {
-  font-size: 2.4rem;
-  line-height: 1.15;
-  margin: 0 0 1.25rem;
-  max-width: 22ch;
-}
-
-.hero .lede {
-  font-size: 1.2rem;
-  line-height: 1.5;
-  color: var(--muted);
-  max-width: 34rem;
-  margin: 0 0 1.75rem;
-}
-
-.soon {
-  font-family: var(--sans);
-  font-size: 14px;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.pill {
-  display: inline-block;
-  padding: 0.45rem 0.9rem;
-  border: 1px solid var(--ink);
-  border-radius: 999px;
-  color: var(--ink);
-  font-weight: 500;
-  letter-spacing: 0.01em;
-}
-
-.phone {
-  margin: 0;
-  width: 100%;
-  max-width: 300px;
-  justify-self: center;
-}
-
-.phone img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 28px;
-  border: 1px solid var(--rule);
-  box-shadow: 0 30px 60px -30px rgba(22, 33, 28, 0.35);
-}
-
-.phone-hero {
-  max-width: 340px;
-}
-
-.section-title {
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.2;
-  margin: 0 0 0.75rem;
-}
-
-.pillars {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 3rem;
-  max-width: 68rem;
-  margin: 0 auto;
-  padding: 3rem 16px;
-  border-top: 1px solid var(--rule);
-}
-
-.pillar h2 {
-  font-size: 1.6rem;
-  font-weight: 400;
-  margin: 1.5rem 0 0.5rem;
-}
-
-.pillar p {
-  color: var(--muted);
-}
-
-.how {
-  max-width: 68rem;
-  margin: 0 auto;
-  padding: 3rem 16px;
-  border-top: 1px solid var(--rule);
-}
-
-.steps {
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 2rem;
-}
-
-.steps li {
-  margin: 0;
-}
-
-.step-number {
-  font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.steps h3 {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 1.25rem;
-  margin: 0 0 0.4rem;
-}
-
-.steps p {
-  color: var(--muted);
-  font-size: 1rem;
-  margin: 0;
-}
-
-.how-phones {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 3rem;
-}
-
-.safety {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 2.5rem;
-  align-items: center;
-  max-width: 68rem;
-  margin: 0 auto;
-  padding: 3rem 16px;
-  border-top: 1px solid var(--rule);
-}
-
-.safety .lede {
-  font-size: 1.15rem;
-  color: var(--muted);
-  margin: 0 0 1.5rem;
-}
-
-.rules {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.rules li {
-  padding: 0.9rem 0;
-  border-top: 1px solid var(--rule);
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.rules li:last-child {
-  border-bottom: 1px solid var(--rule);
-}
-
-.rules strong {
-  font-weight: 500;
-}
-
-.questions {
-  max-width: 42rem;
-  margin: 0 auto;
-  padding: 3rem 16px 4rem;
-  border-top: 1px solid var(--rule);
-}
-
-.questions dl {
-  margin: 1.5rem 0 0;
-}
-
-.questions dt {
-  font-weight: 500;
-  font-size: 1.15rem;
-  margin: 1.5rem 0 0.35rem;
-}
-
-.questions dd {
-  margin: 0;
-  color: var(--muted);
-}
-
-.site-footer {
-  max-width: 68rem;
-  margin: 0 auto;
-  padding: 2.5rem 16px 3rem;
-  border-top: 1px solid var(--rule);
-}
-
-.site-footer .wordmark {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.site-footer .meta {
-  margin: 1.5rem 0 0;
-}
-
+.home { padding: 0; }
+.pill { display: inline-block; padding: .45rem .9rem; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink); font-weight: 600; }
+.phone { margin: 0; width: 100%; min-width: 0; }
+.phone img { display: block; width: 100%; height: auto; border-radius: 24px; border: 1px solid var(--rule); }
+.site-footer { max-width: 68rem; margin: 0 auto; padding: 2rem 16px 3rem; border-top: 1px solid var(--rule); }
+.site-footer .meta { margin: 1.5rem 0 0; }
 @media (min-width: 720px) {
-  .landing {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    min-height: calc(100vh - 8rem);
-    min-height: calc(100dvh - 8rem);
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-
-  .landing .lede {
-    font-size: 2.4rem;
-  }
-
-  .landing-phones .phone:nth-child(3) {
-    display: block;
-  }
-
-  .hero {
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    padding-top: 4.5rem;
-    padding-bottom: 5rem;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-  }
-
-  .pillars {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4rem;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-
-  .steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2.5rem 3rem;
-  }
-
-  .safety {
-    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
+  .landing { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); min-height: calc(100dvh - 8rem); padding-top: 3rem; padding-bottom: 3rem; }
+  .landing .lede { font-size: 2.4rem; }
+  .landing-phones .phone:nth-child(3) { display: block; }
 }
 
-@media (min-width: 1000px) {
-  .steps {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; border-radius: 4px; }
+.wordmark a { display: inline-flex; align-items: center; gap: 0.55rem; }
+.wordmark a::before { content: ""; width: 1.7em; height: 1.7em; background: url("/images/cubip-symbol.png") center / contain no-repeat; }
 
-/* On a phone the in-page links are one tap away anyway; keep the top bar to
-   the wordmark and Support so it stays on one line. */
-@media (max-width: 480px) {
-  .topbar .links {
-    gap: 0.25rem 1rem;
-  }
-
-  .topbar .links li:not(:last-child) {
-    display: none;
-  }
-}
+.lede { font-weight: 600; }
