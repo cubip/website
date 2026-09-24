@@ -1,0 +1,5 @@
+# The owner reviews changes before merging. Required approvals stay at zero
+# while there is one maintainer, because authors cannot approve their own PRs.
+* @ihsu90
+/.github/ @ihsu90
+/scripts/ @ihsu90
