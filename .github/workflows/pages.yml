@@ -1,8 +1,7 @@
 name: Pages
 
-# Publishes this repo to GitHub Pages at https://cubip.com. Runs on
-# Linux, so it costs nothing worth counting; it deploys on every push to main
-# and on demand from the Actions tab.
+# This workflow and GitHub Pages are disabled until launch. Re-enabling them
+# is a separate release decision. These triggers apply only once enabled.
 on:
   push:
     branches: [main]
@@ -16,28 +15,44 @@ concurrency:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 jobs:
   deploy:
     name: Deploy
-    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Check out
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
 
       - name: Configure Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
 
+      - name: Validate and package public files
+        run: |
+          python3 scripts/check-site.py
+          tar --format=posix -cf "$RUNNER_TEMP/artifact.tar" \
+            index.html style.css images privacy terms support CNAME robots.txt
+
+      # Use upload-artifact directly: upload-pages-artifact's composite action
+      # uses a mutable nested action reference. Only public site files are packed.
       - name: Upload the site
-        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          path: .
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
 
       - name: Deploy
         id: deployment

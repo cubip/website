@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review, converted_to_draft, edited]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Website and safety checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install verified audit tools
+        run: |
+          tools_dir="$RUNNER_TEMP/ci-tools"
+          mkdir -p "$tools_dir"
+          curl --fail --silent --show-error --location --retry 3 \
+            https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz \
+            -o "$tools_dir/gitleaks.tar.gz"
+          echo "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb  $tools_dir/gitleaks.tar.gz" | sha256sum --check
+          tar -xzf "$tools_dir/gitleaks.tar.gz" -C "$tools_dir" gitleaks
+          curl --fail --silent --show-error --location --retry 3 \
+            https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz \
+            -o "$tools_dir/actionlint.tar.gz"
+          echo "8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8  $tools_dir/actionlint.tar.gz" | sha256sum --check
+          tar -xzf "$tools_dir/actionlint.tar.gz" -C "$tools_dir" actionlint
+          echo "$tools_dir" >> "$GITHUB_PATH"
+      - name: Scan history for credentials
+        run: |
+          if [[ -e .gitleaksignore || -L .gitleaksignore ]]; then
+            echo "::error::Repository Gitleaks ignore files are not permitted."
+            exit 1
+          fi
+          policy_dir="$(mktemp -d "$RUNNER_TEMP/gitleaks-policy.XXXXXX")"
+          printf '[extend]\nuseDefault = true\n' > "$policy_dir/gitleaks.toml"
+          : > "$policy_dir/.gitleaksignore"
+          gitleaks git --redact --no-banner --log-opts="--all" \
+            --config "$policy_dir/gitleaks.toml" \
+            --gitleaks-ignore-path "$policy_dir/.gitleaksignore" \
+            --ignore-gitleaks-allow .
+      - name: Validate workflows
+        run: actionlint -color
+      - name: Check pages, assets and local links
+        run: python3 scripts/check-site.py
+      - name: Test validation failures
+        run: python3 scripts/test-check-site.py
+
+  gate:
+    name: Ready to merge
+    if: always()
+    needs: validate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 1
+    steps:
+      - name: Require validation and a ready pull request
+        env:
+          VALIDATION: ${{ needs.validate.result }}
+          DRAFT: ${{ github.event.pull_request.draft || false }}
+        run: |
+          if [[ "$VALIDATION" != success || "$DRAFT" != false ]]; then
+            echo "::error::Validation must pass and the pull request must be ready for review."
+            exit 1
+          fi
