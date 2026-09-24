@@ -9,7 +9,7 @@ from urllib.parse import unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PUBLIC_PATHS = ("index.html", "style.css", "images", "privacy", "terms", "support", "CNAME", "robots.txt")
+PUBLIC_PATHS = ("index.html", "style.css", "images", "fonts", "imprint", "privacy", "terms", "support", "CNAME", "robots.txt")
 VOID_TAGS = set("area base br col embed hr img input link meta param source track wbr".split())
 
 

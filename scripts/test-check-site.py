@@ -24,9 +24,9 @@ class SiteValidationTests(unittest.TestCase):
                      '<body><h1 id="intro">cubip</h1>{}</body></html>')
         for entry in CHECK.PUBLIC_PATHS:
             path = self.root / entry
-            if entry in ("images", "privacy", "terms", "support"):
+            if entry in ("images", "fonts", "imprint", "privacy", "terms", "support"):
                 path.mkdir()
-                if entry != "images":
+                if entry not in ("images", "fonts"):
                     (path / "index.html").write_text(self.html.format(""))
             else:
                 path.write_text(":root { color: black; }" if entry == "style.css" else "cubip.com")
@@ -42,6 +42,11 @@ class SiteValidationTests(unittest.TestCase):
 
     def test_missing_asset(self):
         self.assertTrue(self.failures('<img alt="Trip" src="/missing.webp">'))
+
+    def test_local_fonts_and_imprint_are_published(self):
+        (self.root / "fonts" / "local.ttf").write_bytes(b"test font")
+        (self.root / "style.css").write_text('@font-face { src: url("/fonts/local.ttf"); }')
+        self.assertEqual(self.failures('<a href="/imprint/">Imprint</a>'), [])
 
     def test_missing_fragment(self):
         self.assertTrue(self.failures('<a href="/privacy/#missing">Privacy</a>'))

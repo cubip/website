@@ -42,7 +42,7 @@ jobs:
         run: |
           python3 scripts/check-site.py
           tar --format=posix -cf "$RUNNER_TEMP/artifact.tar" \
-            index.html style.css images privacy terms support CNAME robots.txt
+            index.html style.css images fonts imprint privacy terms support CNAME robots.txt
 
       # Use upload-artifact directly: upload-pages-artifact's composite action
       # uses a mutable nested action reference. Only public site files are packed.
