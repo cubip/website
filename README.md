@@ -19,9 +19,8 @@ python3 scripts/check-site.py
 python3 scripts/test-check-site.py
 ```
 
-`Ready to merge` is the stable GitHub Actions check to require after its first
-successful run. PR and history protections are active; enable the required check
-after publishing this workflow. It fails when
+The `main` ruleset requires the stable `Ready to merge` GitHub Actions check and
+an up-to-date branch, alongside PR and history protections. The check fails when
 validation fails, is cancelled, or the pull request is still a draft. Redundant
 runs are cancelled when a pull request changes. The owner reviews and squash
 merges through GitHub. CODEOWNERS assigns ownership; required approvals stay at
