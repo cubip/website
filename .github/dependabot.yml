@@ -1,0 +1,12 @@
+# Monthly, grouped updates of the pinned GitHub Actions, as one PR into main.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
+    commit-message:
+      prefix: ci
