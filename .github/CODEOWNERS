@@ -1,5 +1,3 @@
-# The owner reviews changes before merging. Required approvals stay at zero
-# while there is one maintainer, because authors cannot approve their own PRs.
-* @ihsu90
-/.github/ @ihsu90
-/scripts/ @ihsu90
+# The admin team reviews every change, including ownership and workflow code.
+# Automation opens pull requests; a human code owner reviews and merges them.
+* @cubip/admin
