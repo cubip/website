@@ -1,4 +1,6 @@
-# Monthly, grouped updates of the pinned GitHub Actions, as one PR into main.
+# Monthly, grouped minor and patch updates of the pinned GitHub Actions, as one
+# PR into main. Major versions are moved by hand: a major can change what an
+# action does or pulls in, and the organisation allows only named actions.
 version: 2
 updates:
   - package-ecosystem: github-actions
@@ -8,5 +10,8 @@ updates:
     groups:
       actions:
         patterns: ["*"]
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     commit-message:
       prefix: ci
